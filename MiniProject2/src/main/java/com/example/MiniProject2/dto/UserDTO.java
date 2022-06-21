@@ -9,6 +9,6 @@ import lombok.*;
 @RequiredArgsConstructor
 public class UserDTO {
     private String phone_number;
-    private Long address;
+    private String address;
     private String user_name;
 }

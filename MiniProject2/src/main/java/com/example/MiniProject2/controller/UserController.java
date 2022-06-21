@@ -15,7 +15,7 @@ public class UserController {
     @PostMapping("signin")
     public UserEntity signup(@RequestBody UserEntity reqBody){
         String phone_number = reqBody.getPhone_number();
-        Long address = reqBody.getAddress();
+        String address = reqBody.getAddress();
         String user_name = reqBody.getUser_name();
         UserEntity user = userServiceImpl.getUser(phone_number,address,user_name);
         return user;
@@ -25,7 +25,7 @@ public class UserController {
     @ResponseStatus(HttpStatus.CREATED)
     public UserEntity login(@RequestBody UserEntity reqBody) {
         String phone_number = reqBody.getPhone_number();
-        Long address = reqBody.getAddress();
+        String address = reqBody.getAddress();
         String user_name = reqBody.getUser_name();
         UserEntity user = userServiceImpl.getUser(phone_number,address,user_name);
         return user;
