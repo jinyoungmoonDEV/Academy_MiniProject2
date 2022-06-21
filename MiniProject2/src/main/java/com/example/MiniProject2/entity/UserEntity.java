@@ -13,8 +13,8 @@ public class UserEntity {
     @Column(length = 13 )
     private String phone_number;
 
-    @Column(length = 50, nullable = false)
-    private String address;
+    @Column(length = 100, nullable = false)
+    private Long address;
 
     @Column(length = 15, nullable = false)
     private String user_name;

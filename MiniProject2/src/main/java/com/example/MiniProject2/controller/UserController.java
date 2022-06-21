@@ -15,7 +15,7 @@ public class UserController {
     @PostMapping("sign in")
     public UserEntity signin(@RequestBody UserEntity reqBody){
         String phone_number = reqBody.getPhone_number();
-        String address = reqBody.getAddress();
+        Long address = reqBody.getAddress();
         String username = reqBody.getUser_name();
         UserEntity user = userServiceImpl.getUser(phone_number,address,username);
         return user;
