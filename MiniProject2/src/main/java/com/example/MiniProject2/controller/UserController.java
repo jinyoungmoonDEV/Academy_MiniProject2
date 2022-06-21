@@ -12,19 +12,22 @@ public class UserController {
     @Autowired
     private UserServiceImpl userServiceImpl;
 
-    @PostMapping("sign in")
-    public UserEntity signin(@RequestBody UserEntity reqBody){
+    @PostMapping("signin")
+    public UserEntity signup(@RequestBody UserEntity reqBody){
         String phone_number = reqBody.getPhone_number();
         Long address = reqBody.getAddress();
-        String username = reqBody.getUser_name();
-        UserEntity user = userServiceImpl.getUser(phone_number,address,username);
+        String user_name = reqBody.getUser_name();
+        UserEntity user = userServiceImpl.getUser(phone_number,address,user_name);
         return user;
     }
 
     @PostMapping("signup")
     @ResponseStatus(HttpStatus.CREATED)
-    public UserEntity signup(@RequestBody UserEntity reqBody) {
-        UserEntity user = userServiceImpl.setUser(reqBody);
+    public UserEntity login(@RequestBody UserEntity reqBody) {
+        String phone_number = reqBody.getPhone_number();
+        Long address = reqBody.getAddress();
+        String user_name = reqBody.getUser_name();
+        UserEntity user = userServiceImpl.getUser(phone_number,address,user_name);
         return user;
     }
 }
