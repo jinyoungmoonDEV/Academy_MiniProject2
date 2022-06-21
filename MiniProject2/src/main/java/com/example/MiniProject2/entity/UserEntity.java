@@ -10,12 +10,13 @@ import javax.persistence.*;
 @Setter
 public class UserEntity {
     @Id
-    @Column(length = 13 )
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(length = 11)
     private String phone_number;
 
     @Column(length = 50, nullable = false)
     private String address;
 
-    @Column(length = 15, nullable = false)
+    @Column(length = 10, nullable = false)
     private String user_name;
 }
