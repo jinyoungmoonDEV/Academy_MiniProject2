@@ -10,7 +10,7 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    public UserEntity getUser(String phone_number, String passwd){
+    public UserEntity getUser(String phone_number, String address, String username){
         return userRepository.findById(phone_number).get();
     }
 

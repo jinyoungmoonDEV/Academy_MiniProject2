@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="07dbc62d-ef15-42ff-9cfe-fc7e26333579" name="변경" comment="Update">
-      <change afterPath="$PROJECT_DIR$/MiniProject2/src/main/java/com/example/MiniProject2/repository/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MiniProject2/src/main/java/com/example/MiniProject2/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MiniProject2/src/main/java/com/example/MiniProject2/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MiniProject2/src/main/java/com/example/MiniProject2/entity/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/MiniProject2/src/main/java/com/example/MiniProject2/entity/BoardEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MiniProject2/src/main/java/com/example/MiniProject2/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/MiniProject2/src/main/java/com/example/MiniProject2/entity/UserEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MiniProject2/src/main/java/com/example/MiniProject2/entity/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/MiniProject2/src/main/java/com/example/MiniProject2/entity/UserEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MiniProject2/src/main/java/com/example/MiniProject2/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MiniProject2/src/main/java/com/example/MiniProject2/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MiniProject2/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/MiniProject2/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,13 +57,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\문진영\IdeaProjects\MiniProject2\MiniProject2" />
@@ -92,7 +91,21 @@
       <option name="project" value="LOCAL" />
       <updated>1655771972898</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Update">
+      <created>1655772959656</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1655772959656</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Update">
+      <created>1655772976872</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1655772976872</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
