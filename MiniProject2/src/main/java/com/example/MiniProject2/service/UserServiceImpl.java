@@ -10,7 +10,7 @@ public class UserServiceImpl implements UserService{
     @Autowired
     private UserRepository userRepository;
 
-    public UserEntity getUser(String phone_number, Long address, String username){
+    public UserEntity getUser(String phone_number, String address, String username){
         return userRepository.findById(phone_number).get();
     }
 
