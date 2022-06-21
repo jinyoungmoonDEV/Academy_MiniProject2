@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Table(name = "user_tbl")
 @Getter
 @Setter
-public class User {
+public class UserEntity {
     @Id
     @Column(length = 13, nullable = false)
     private String phone_number;
