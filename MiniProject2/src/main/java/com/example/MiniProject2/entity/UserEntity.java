@@ -10,7 +10,7 @@ import javax.persistence.*;
 @Setter
 public class UserEntity {
     @Id
-    @Column(length = 13)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String phone_number;
 
     @Column(length = 100, nullable = false)
