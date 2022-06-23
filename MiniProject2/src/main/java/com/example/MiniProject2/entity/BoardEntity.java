@@ -6,6 +6,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.awt.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "board_tbl")
@@ -16,32 +17,24 @@ public class BoardEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long ano;
 
-    @Column
+    @Column(length = 10, nullable = false)
     private String r_code;
 
-    @Column
+    @Column(length = 20, nullable = false)
     private String user_id;
 
-    @Column
+    @Column(length = 30, nullable = false)
     private String title;
 
-    @Column
+    @Column(length = 10000, nullable = false)
     private String contents;
 
-    @Column
+    @Column(length = 100, nullable = false)
     private String reply;
 
-    @Column
+    @Column(length = 10, nullable = false)
     private LocalDate date;
 
-    @Column
+    @Column(length = 10, nullable = false)
     private long viewers;
-
-    @ManyToOne
-    @JoinColumn(name = "r_code")
-    private RegionEntity regionEntity;
-
-    @ManyToMany
-    @JoinColumn(name = "user_id")
-    private UserEntity userEntity;
 }

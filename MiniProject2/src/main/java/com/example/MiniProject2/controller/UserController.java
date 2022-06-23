@@ -26,7 +26,7 @@ public class UserController {
     public UserEntity login(@RequestBody UserEntity reqBody) {
         String phone_number = reqBody.getPhone_number();
         String address = reqBody.getAddress();
-        String user_name = reqBody.getUser_name();
+        String user_name = reqBody.getUser_id();
         UserEntity user = userService.getUser(phone_number,address,user_name);
         return user;
     }

@@ -11,17 +11,18 @@ import java.util.Set;
 @Getter
 @Setter
 public class RegionEntity {
-
-    private String address;
-
     @Id
+    @Column(length = 10, nullable = false)
     private String r_code;
+
+    @Column(length = 50, nullable = false)
+    private String address;
 
     @OneToMany
     @JoinColumn(name = "r_code")
-    private Set<AdobtEntity> adobtEntitySet;
+    private Set<AdoptEntity> adoptEntitySet;
 
     @OneToMany
-    @JoinColumn(name = "user_id")
-    private Set<UserEntity> userEntitySet;
+    @JoinColumn(name = "r_code")
+    private Set<BoardEntity> boardEntitySet;
 }
