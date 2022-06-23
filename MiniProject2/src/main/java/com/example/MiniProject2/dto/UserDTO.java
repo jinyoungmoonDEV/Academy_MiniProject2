@@ -9,6 +9,7 @@ import lombok.*;
 @Getter
 public class UserDTO {
     private String phone_number;
+    private String password;
     private String address;
-    private String user_name;
+    private String user_id;
 }
