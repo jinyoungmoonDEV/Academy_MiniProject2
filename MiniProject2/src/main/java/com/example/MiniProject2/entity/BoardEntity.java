@@ -18,10 +18,10 @@ public class BoardEntity {
     private long ano;
 
     @Column(length = 10, nullable = false)
-    private String r_code;
+    public String r_code;
 
     @Column(length = 20, nullable = false)
-    private String user_id;
+    public String user_id;
 
     @Column(length = 30, nullable = false)
     private String title;

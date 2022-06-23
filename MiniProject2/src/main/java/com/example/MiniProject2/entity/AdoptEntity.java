@@ -2,10 +2,10 @@ package com.example.MiniProject2.entity;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.mapping.List;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.List;
 
 @Entity
 @Table(name = "adopt_tbl")
@@ -17,10 +17,10 @@ public class AdoptEntity {
     private long ano;
 
     @Column(length = 10, nullable = false)
-    private String r_code;
+    public String r_code;
 
     @Column(length = 20, nullable = false)
-    private String user_id;
+    public String user_id;
 
     @Column(length = 30, nullable = false)
     private String title;

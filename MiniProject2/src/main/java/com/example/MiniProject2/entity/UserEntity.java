@@ -18,22 +18,26 @@ public class UserEntity { //데이터베이스 테이블의 스키마
     private String password;
 
     @Column(length = 100, nullable = false)
-    private String address;
+    public String address;
 
     @Column(length = 15, nullable = false)
-    private String user_id;
+    public String user_id;
 
-    @ManyToOne
-    @JoinColumn(name = "address")
-    private List<RegionEntity> regionEntityList;
+    //@ManyToOne(targetEntity=RegionEntity.class)
+    //@ManyToOne
+    //@JoinColumn(name = "address")
+    //private List<RegionEntity> regionEntityList;
+    //private RegionEntity regionEntity;
 
-    @OneToMany
-    @JoinColumn(name = "user_id")
-    private Set<AdoptEntity> adoptEntitySet;
+    //@OneToMany(targetEntity=AdoptEntity.class)
+    //@JoinColumn(name = "user_id")
+    //private Set<AdoptEntity> adoptEntitySet;
+    //private AdoptEntity adoptEntity;
 
-    @OneToMany
-    @JoinColumn(name = "user_id")
-    private Set<BoardEntity> boardEntitySet;
+    //@OneToMany(targetEntity=BoardEntity.class)
+    //@JoinColumn(name = "user_id")
+    //private Set<BoardEntity> boardEntitySet;
+    //private BoardEntity boardEntity;
 
     public UserEntity(String phone_number, String address, String user_name){
         this.phone_number = phone_number;
