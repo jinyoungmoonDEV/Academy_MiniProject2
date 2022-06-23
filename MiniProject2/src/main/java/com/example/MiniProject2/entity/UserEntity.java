@@ -31,9 +31,10 @@ public class UserEntity { //데이터베이스 테이블의 스키마
     @JoinColumn(name = "user_id")
     private Set<BoardEntity> boardEntitySet;
 
-    public UserEntity(String phone_number, String address, String user_name){
+    public UserEntity(String phone_number, String password, String address, String user_id){
         this.phone_number = phone_number;
+        this.password = password;
         this.address = address;
-        this.user_id = user_name;
+        this.user_id = user_id;
     }
 }

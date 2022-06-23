@@ -10,7 +10,7 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    public UserEntity getUser(String phone_number, String address, String username){
+    public UserEntity getUser(String phone_number,String password, String address, String user_id){
         //getUser 메서드는 아이디로 User 테이블을 조회하여 정보를 리턴
         return userRepository.findById(phone_number).get();
     }
