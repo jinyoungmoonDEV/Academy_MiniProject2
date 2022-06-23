@@ -5,7 +5,6 @@ import lombok.Setter;
 import org.hibernate.mapping.List;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 
 @Entity
 @Table(name = "adopt_tbl")

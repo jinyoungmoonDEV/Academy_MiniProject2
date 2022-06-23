@@ -2,7 +2,6 @@ package com.example.MiniProject2.entity;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.apache.catalina.User;
 
 import javax.persistence.*;
 import java.util.List;
