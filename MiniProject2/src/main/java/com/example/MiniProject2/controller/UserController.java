@@ -15,14 +15,14 @@ public class UserController {
 
     private UserRepository userRepository;
 
-    @RequestMapping("signup")
+    @RequestMapping("/signup")
     @ResponseStatus(HttpStatus.CREATED)
     public UserEntity signup(@RequestBody UserEntity reqBody){
         UserEntity user = userService.setUser(reqBody);
         return user;
     }
 
-    @PostMapping("signin")
+    @PostMapping("/signin")
     public UserEntity login(@RequestBody UserEntity reqBody) {
         String phone_number = reqBody.getPhone_number();
         String address = reqBody.getAddress();
