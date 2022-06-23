@@ -35,8 +35,5 @@ public class AdoptEntity {
     private String reply;
 
     @Column(length = 10, nullable = false)
-    private LocalDate date;
-
-    @Column(length = 10, nullable = false)
     private long viewers;
 }
