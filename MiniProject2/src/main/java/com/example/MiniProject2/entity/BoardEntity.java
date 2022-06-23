@@ -5,8 +5,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.awt.*;
-import java.time.LocalDate;
-import java.util.List;
+
 
 @Entity
 @Table(name = "board_tbl")
@@ -31,9 +30,6 @@ public class BoardEntity {
 
     @Column(length = 100, nullable = false)
     private String reply;
-
-    @Column(length = 10, nullable = false)
-    private LocalDate date;
 
     @Column(length = 10, nullable = false)
     private long viewers;
