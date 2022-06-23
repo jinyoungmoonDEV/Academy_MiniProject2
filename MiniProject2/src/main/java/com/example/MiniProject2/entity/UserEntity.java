@@ -12,15 +12,16 @@ import java.util.Set;
 @Setter
 public class UserEntity { //데이터베이스 테이블의 스키마
     @Id
+    @Column(name = "phone_number")
     private String phone_number;
 
-    @Column(length = 100, nullable = false)
+    @Column(name = "password", length = 100, nullable = false)
     private String password;
 
-    @Column(length = 100, nullable = false)
+    @Column(name = "address", length = 100, nullable = false)
     private String address;
 
-    @Column(length = 15, nullable = false)
+    @Column(name = "user_id", length = 15, nullable = false)
     private String user_id;
 
     @ManyToOne
