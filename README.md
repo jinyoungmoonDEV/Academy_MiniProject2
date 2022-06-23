@@ -1,9 +1,11 @@
 # MiniProject2
+
 env -> SpringBoot, JPA, MySQL, React
 
 #Diary
 
 -Day1 : 
+
         -DB설계 및 ERD 설계
         
         -SpringBoot와 DB 연결 및 최적화 (build.gradle DB 업데이트 코드 추가)
