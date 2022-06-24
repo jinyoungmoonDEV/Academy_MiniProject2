@@ -1,7 +1,6 @@
 package com.example.MiniProject2.entity;
 
 import lombok.*;
-import sun.security.util.Password;
 
 import javax.persistence.*;
 import java.util.Set;
