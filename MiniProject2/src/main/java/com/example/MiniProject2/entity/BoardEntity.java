@@ -1,6 +1,7 @@
 package com.example.MiniProject2.entity;
 
 import lombok.*;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -14,7 +15,8 @@ import java.util.Set;
 @Table(name = "board_tbl"/*, uniqueConstraints = {@UniqueConstraint(columnNames = "phone_number")}*/)
 public class BoardEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(generator = "system-uuid", strategy = GenerationType.IDENTITY)
+    @GenericGenerator(name="system-uuid", strategy = "uuid")
     private long bno;
 
     @Column(name = "r_code", length = 10, nullable = false)
