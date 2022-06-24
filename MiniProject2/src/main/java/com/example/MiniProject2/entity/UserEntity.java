@@ -20,10 +20,10 @@ public class UserEntity { //데이터베이스 테이블의 스키마
     private String password;
 
     @Column(name = "address", length = 100, nullable = false)
-    private String address;
+    public String address;
 
-    @Column(name = "user_id", length = 15, nullable = false)
-    private String user_id;
+    @Column(name = "user_id", length = 10, nullable = false)
+    public String user_id;
 
     @OneToMany
     @JoinColumn(name = "user_id")

@@ -19,7 +19,7 @@ public class BReplyEntity {
     private long bno;
 
     @Column(name = "breply", length = 10, nullable = false)
-    public String contents;
+    private String breply;
 
     @Column(name = "user_id", length = 20, nullable = false)
     public String user_id;

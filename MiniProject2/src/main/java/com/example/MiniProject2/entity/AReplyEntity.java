@@ -13,10 +13,10 @@ import javax.persistence.*;
 public class AReplyEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long bno;
+    private long ano;
 
-    @Column(name = "areply", length = 10, nullable = false)
-    public String contents;
+    @Column(name = "areply", length = 10000, nullable = false)
+    private String areply;
 
     @Column(name = "user_id", length = 20, nullable = false)
     public String user_id;

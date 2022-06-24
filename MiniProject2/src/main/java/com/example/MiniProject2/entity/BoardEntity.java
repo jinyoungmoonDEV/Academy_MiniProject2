@@ -31,13 +31,13 @@ public class BoardEntity {
     @Column(name = "contents",length = 10000, nullable = false)
     private String contents;
 
-    @Column(name = "viewers", length = 10, nullable = false)
+    @Column(name = "viewers", length = 10)
     private long viewers;
 
-    @Column(name = "replycnt", length = 10, nullable = false)
+    @Column(name = "replycnt", length = 10)
     private long replycnt;
 
     @OneToMany
-    @JoinColumn(name = "brno")
+    @JoinColumn(name = "bno")
     private Set<BReplyEntity> bReplyEntitySet;
 }

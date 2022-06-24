@@ -1,7 +1,6 @@
 package com.example.MiniProject2.dto;
 
 import com.example.MiniProject2.entity.BoardEntity;
-import com.example.demo.model.TodoEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,22 +9,33 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 public class BoardDTO {
-	private String id;
+
+	public Long bno;
+	private String r_code;
+	private String user_id;
 	private String title;
-	private boolean done;
+	private String contents;
+	private Long viewers;
+	private Long replycnt;
 
 	public BoardDTO(final BoardEntity entity) {
-		this.id = entity.getId();
+		this.bno = entity.getBno();
+		this.r_code = entity.getR_code();
+		this.user_id = entity.getUser_id();
 		this.title = entity.getTitle();
-		this.done = entity.isDone();
+		this.viewers = entity.getViewers();
+		this.replycnt = entity.getReplycnt();
 	}
 
 	public static BoardEntity toEntity(final BoardDTO dto) {
 		return BoardEntity.builder()
-						.id(dto.getId())
-						.title(dto.getTitle())
-						.done(dto.isDone())
-						.build();
+				.bno(dto.getBno())
+				.user_id(dto.getUser_id())
+				.r_code(dto.getR_code())
+				.title(dto.getTitle())
+				.viewers(dto.getViewers())
+				.replycnt(dto.getReplycnt())
+				.build();
 	}
 }
 

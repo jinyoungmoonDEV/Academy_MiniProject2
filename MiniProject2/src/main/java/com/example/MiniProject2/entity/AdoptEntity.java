@@ -32,10 +32,10 @@ public class AdoptEntity {
     @Column(name = "contents",length = 10000, nullable = false)
     private String contents;
 
-    @Column(name = "image",length = 10000, nullable = false)
+    @Column(name = "image",length = 10000)
     private Blob image;
 
     @OneToMany
-    @JoinColumn(name = "arno")
+    @JoinColumn(name = "ano")
     private Set<AReplyEntity> aReplyEntitySet;
 }
