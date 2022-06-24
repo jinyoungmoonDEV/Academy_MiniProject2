@@ -1,0 +1,33 @@
+package com.example.MiniProject2.entity;
+
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.persistence.*;
+import java.util.List;
+import java.util.Set;
+
+@Entity
+@Table(name = "region_tbl")
+@Getter
+@Setter
+public class RegionEntity {
+    @Id
+    @Column(name = "r_code", length = 10, nullable = false)
+    public String r_code;
+
+    @Column(name = "address", length = 50, nullable = false)
+    public String address;
+
+    @OneToMany
+    @JoinColumn(name = "r_code")
+    private Set<AdoptEntity> adoptEntitySet;
+
+    @OneToMany
+    @JoinColumn(name = "r_code")
+    private Set<BoardEntity> boardEntitySet;
+
+    @OneToMany
+    @JoinColumn(name = "address")
+    private List<UserEntity> userEntityList;
+}
