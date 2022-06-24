@@ -1,19 +1,21 @@
 package com.example.MiniProject2.entity;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
+import java.util.Set;
 
 
+@Data
 @Entity
-@Table(name = "board_tbl")
-@Getter
-@Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "board_tbl"/*, uniqueConstraints = {@UniqueConstraint(columnNames = "phone_number")}*/)
 public class BoardEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long ano;
+    private long bno;
 
     @Column(name = "r_code", length = 10, nullable = false)
     public String r_code;
@@ -29,4 +31,11 @@ public class BoardEntity {
 
     @Column(name = "viewers", length = 10, nullable = false)
     private long viewers;
+
+    @Column(name = "replycnt", length = 10, nullable = false)
+    private long replycnt;
+
+    @OneToMany
+    @JoinColumn(name = "brno")
+    private Set<BReplyEntity> bReplyEntitySet;
 }

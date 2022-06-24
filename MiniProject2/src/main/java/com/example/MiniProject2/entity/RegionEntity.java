@@ -1,16 +1,17 @@
 package com.example.MiniProject2.entity;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
 import java.util.Set;
 
+@Data
 @Entity
-@Table(name = "region_tbl")
-@Getter
-@Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "region_tbl"/*, uniqueConstraints = {@UniqueConstraint(columnNames = "phone_number")}*/)
 public class RegionEntity {
     @Id
     @Column(name = "r_code", length = 10, nullable = false)

@@ -17,17 +17,17 @@ public class UserService {
         if(userEntity == null || userEntity.getPhone_number() == null ) {
             throw new RuntimeException("Invalid arguments");
         }
-        final String email = userEntity.getPhone_number();
-        if(userRepository.existsByPhoneNumber(email)) {
-            log.warn("Email already exists {}", email);
+        final String phone_number = userEntity.getPhone_number();
+        if(userRepository.existsByPhoneNumber(phone_number)) {
+            log.warn("Email already exists {}", phone_number);
             throw new RuntimeException("Email already exists");
         }
 
         return userRepository.save(userEntity);
     }
 
-    public UserEntity getByCredentials(final String phonenumber, final String password, final PasswordEncoder encoder) {
-        final UserEntity originalUser = userRepository.findByPhoneNumber(phonenumber);
+    public UserEntity getByCredentials(final String phone_number, final String password, final PasswordEncoder encoder) {
+        final UserEntity originalUser = userRepository.findByPhoneNumber(phone_number);
 
         // matches 메서드를 이용해 패스워드가 같은지 확인
         if(originalUser != null && encoder.matches(password, originalUser.getPassword())) {

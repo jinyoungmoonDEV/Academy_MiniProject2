@@ -4,15 +4,16 @@ import com.example.MiniProject2.dto.ResponseDTO;
 import com.example.MiniProject2.dto.UserDTO;
 import com.example.MiniProject2.entity.UserEntity;
 import com.example.MiniProject2.security.TokenProvider;
-import com.example.MiniProject2.repository.UserRepository;
 import com.example.MiniProject2.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
 @RestController
@@ -27,7 +28,6 @@ public class UserController {
     private PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
     @RequestMapping(value = "/create",method = RequestMethod.POST)
-    @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<?> registerUser(@RequestBody UserDTO userDTO){
         try {
             // 리퀘스트를 이용해 저장할 유저 만들기
@@ -56,7 +56,7 @@ public class UserController {
     }
 
     @GetMapping (value = "/userin")
-    public ResponseDTO<?> signinUser(@RequestBody UserDTO userDTO) {
+    public ResponseEntity<?> signinUser(@RequestBody UserDTO userDTO) {
         UserEntity user = userService.getByCredentials(
                 userDTO.getPhone_number(),
                 userDTO.getPassword(),
@@ -67,7 +67,7 @@ public class UserController {
             final String token = tokenProvider.create(user);
             final UserDTO responseUserDTO = UserDTO.builder()
                     .phone_number(user.getPhone_number())
-                    .id(user.getId())
+                    .user_id(user.getUser_id())
                     .token(token)
                     .build();
             return ResponseEntity.ok().body(responseUserDTO);
@@ -79,25 +79,5 @@ public class UserController {
                     .badRequest()
                     .body(responseDTO);
         }
-    }
-    }
-
-    @GetMapping(value = "/signup")
-    public String signuppage() {
-        return "SignUp";
-    }
-
-    @GetMapping(value = "/signin")
-    public String signinpage() {
-        return "SignUp";
-    }
-
-    public UserController(UserRepository userRepository){
-        this.userRepository = userRepository;
-    }
-
-    @RequestMapping("/")
-    public String index(){
-        return "index";
     }
 }

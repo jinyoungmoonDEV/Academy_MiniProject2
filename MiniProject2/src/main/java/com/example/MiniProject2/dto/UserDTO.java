@@ -7,12 +7,11 @@ import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
 @Data
-@Entity
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(uniqueConstraints = {@UniqueConstraint(columnNames = "phone_number")})
 public class UserDTO {
+    private String token;
     private String phone_number;
     private String password;
     private String address;

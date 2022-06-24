@@ -10,7 +10,7 @@ import java.util.Set;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(uniqueConstraints = {@UniqueConstraint(columnNames = "phone_number")})
+@Table(name = "user_tbl"/*, uniqueConstraints = {@UniqueConstraint(columnNames = "phone_number")}*/)
 public class UserEntity { //데이터베이스 테이블의 스키마
     @Id
     @Column(name = "phone_number", length = 11)
