@@ -25,7 +25,7 @@ public class BoardController {
         String str = boardService.testService(); // 테스트 서비스 사용
         List<String> list = new ArrayList<>();
         list.add(str);
-        BoardDTO<String> response = BoardDTO.<String>builder().data(list).build();
+        ResponseDTO<String> response = ResponseDTO.<String>builder().data(list).build();
         return ResponseEntity.ok(response);
     }
 
@@ -51,7 +51,7 @@ public class BoardController {
             List<BoardDTO> dtos = entities.stream().map(BoardDTO::new).collect(Collectors.toList());
 
             // (6) 변환된 TodoDTO리스트를 이용해ResponseDTO를 초기화한다.
-            ResponseDTO<BoardDTO> response = BoardDTO.<BoardDTO>builder().data(dtos).build();
+            ResponseDTO<BoardDTO> response = ResponseDTO.<BoardDTO>builder().data(dtos).build();
 
             // (7) ResponseDTO를 리턴한다.
             return ResponseEntity.ok(response);
@@ -69,7 +69,7 @@ public class BoardController {
             @AuthenticationPrincipal String userId) {
         System.out.println("UserID : " + userId);
         // (1) 서비스 메서드의 retrieve메서드를 사용해 Todo리스트를 가져온다
-        List<BoardDTO> entities = boardService.retrieve(userId);
+        List<BoardEntity> entities = boardService.retrieve(userId);
 
         // (2) 자바 스트림을 이용해 리턴된 엔티티 리스트를 TodoDTO리스트로 변환한다.
         List<BoardDTO> dtos = entities.stream().map(BoardDTO::new).collect(Collectors.toList());
@@ -86,7 +86,7 @@ public class BoardController {
     public ResponseEntity<?> updateTodo(@AuthenticationPrincipal String userId,
                                         @RequestBody BoardDTO dto) {
         // (1) dto를 entity로 변환한다.
-        BoardDTO entity = BoardDTO.toEntity(dto);
+        BoardEntity entity = BoardDTO.toEntity(dto);
 
         // (2) id를 userId 초기화 한다.
         entity.setUserId(userId);

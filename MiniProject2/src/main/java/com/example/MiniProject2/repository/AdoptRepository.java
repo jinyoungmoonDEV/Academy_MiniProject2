@@ -9,5 +9,5 @@ import java.util.List;
 
 @Repository
 public interface AdoptRepository extends JpaRepository<AdoptEntity, String> {
-    List<AdoptEntity> findByUserId(String ano);
+    List<AdoptEntity> findByUserId(Long ano);
 }

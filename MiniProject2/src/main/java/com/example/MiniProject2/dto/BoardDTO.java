@@ -4,6 +4,7 @@ import com.example.MiniProject2.entity.BoardEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.http.codec.ServerSentEvent;
 
 @NoArgsConstructor
 @AllArgsConstructor
