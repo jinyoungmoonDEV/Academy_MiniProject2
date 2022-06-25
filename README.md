@@ -15,3 +15,12 @@ env -> SpringBoot, JPA, MySQL, React
         -SpringBoot 에서 JPA로 테이블 생성 및 관계 형성(PK,FK)
         
         -로그인, 회원가입 기능 일부 구성(테스트용 html파일 구현, 로그인 정보 db와 비교, 회원가입 정보 DB에 Create)
+
+
+-Day2 :
+        
+        -일부 React 기능 클론 코딩
+
+        -회원가입, 로그인 기능 구현 완성
+
+        -게시판 기능 일부 구현
