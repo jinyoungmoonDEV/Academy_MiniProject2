@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Data
 @Entity
@@ -15,12 +16,14 @@ import javax.persistence.*;
 @Table(name = "breply_tbl"/*, uniqueConstraints = {@UniqueConstraint(columnNames = "phone_number")}*/)
 public class BReplyEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long bno;
+    public long bno;
 
     @Column(name = "breply", length = 10, nullable = false)
     private String breply;
 
     @Column(name = "user_id", length = 20, nullable = false)
     public String user_id;
+
+    @Column(name = "date", length = 8, nullable = false)
+    private LocalDate date;
 }

@@ -11,8 +11,8 @@ import lombok.NoArgsConstructor;
 public class BoardDTO {
 
 	public Long bno;
-	private String r_code;
-	private String user_id;
+	public String r_code;
+	public String user_id;
 	private String title;
 	private String contents;
 	private Long viewers;

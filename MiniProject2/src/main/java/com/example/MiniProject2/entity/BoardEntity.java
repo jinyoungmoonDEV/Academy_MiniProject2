@@ -39,5 +39,5 @@ public class BoardEntity {
 
     @OneToMany
     @JoinColumn(name = "bno")
-    private Set<BReplyEntity> bReplyEntitySet;
+    private Set<BReplyEntity> bnoReplyEntitySet;
 }

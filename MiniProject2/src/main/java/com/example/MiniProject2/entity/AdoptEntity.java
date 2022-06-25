@@ -18,7 +18,7 @@ import java.util.Set;
 public class AdoptEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long ano;
+    public long ano;
 
     @Column(name = "r_code", length = 10, nullable = false)
     public String r_code;
@@ -37,5 +37,5 @@ public class AdoptEntity {
 
     @OneToMany
     @JoinColumn(name = "ano")
-    private Set<AReplyEntity> aReplyEntitySet;
+    private Set<AReplyEntity> anoReplyEntitySet;
 }

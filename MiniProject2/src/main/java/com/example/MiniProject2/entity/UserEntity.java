@@ -32,4 +32,12 @@ public class UserEntity { //데이터베이스 테이블의 스키마
     @OneToMany
     @JoinColumn(name = "user_id")
     private Set<BoardEntity> boardEntitySet;
+
+    @OneToMany
+    @JoinColumn(name = "user_id")
+    private Set<AReplyEntity> aReplyEntitySet;
+
+    @OneToMany
+    @JoinColumn(name = "user_id")
+    private Set<BReplyEntity> bReplyEntitySet;
 }

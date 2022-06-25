@@ -14,9 +14,9 @@ import java.sql.Blob;
 @NoArgsConstructor
 @AllArgsConstructor
 public class AdoptDTO {
-    private long ano;
-    private String r_code;
-    private String user_id;
+    public long ano;
+    public String r_code;
+    public String user_id;
     private String title;
     private String contents;
     private Blob image;
