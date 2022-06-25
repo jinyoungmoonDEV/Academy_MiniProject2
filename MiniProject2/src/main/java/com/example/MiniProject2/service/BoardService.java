@@ -66,7 +66,7 @@ public class BoardService {
 		original.ifPresent(todo -> {
 			// (3) 반환된 TodoEntity가 존재하면 값을 새 entity의 값으로 덮어 씌운다.
 			todo.setTitle(entity.getTitle());
-			todo.setDone(entity.isDone());
+			todo.setContents(entity.getContents());
 
 			// (4) 데이터베이스에 새 값을 저장한다.
 			boardRepository.save(todo);
