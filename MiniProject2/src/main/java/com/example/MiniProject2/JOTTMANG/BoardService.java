@@ -1,5 +1,5 @@
 
-package com.example.MiniProject2.service;
+package com.example.MiniProject2.JOTTMANG;
 
 import com.example.MiniProject2.entity.BoardEntity;
 import com.example.MiniProject2.repository.BoardRepository;

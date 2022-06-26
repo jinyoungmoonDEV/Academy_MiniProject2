@@ -1,9 +1,9 @@
-package com.example.MiniProject2.controller;
+package com.example.MiniProject2.JOTTMANG;
 
 import com.example.MiniProject2.dto.BoardDTO;
 import com.example.MiniProject2.dto.ResponseDTO;
 import com.example.MiniProject2.entity.BoardEntity;
-import com.example.MiniProject2.service.BoardService;
+import com.example.MiniProject2.JOTTMANG.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -30,7 +30,7 @@ public class BoardController {
     }
 
     @PostMapping
-    public ResponseEntity<?> createTodo(
+    public ResponseEntity<?> createBoard(
             @AuthenticationPrincipal String userId,
             @RequestBody BoardDTO dto) {
         try {

@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface BoardRepository extends JpaRepository<BoardEntity, String>{
+public interface BoardRepository extends JpaRepository<BoardEntity, Long>{
 	List<BoardEntity> findByUserId(Long bno);
 }
