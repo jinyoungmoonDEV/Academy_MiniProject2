@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface AdoptRepository extends JpaRepository<AdoptEntity, String> {
+public interface AdoptRepository extends JpaRepository<AdoptEntity, Long> {
     List<AdoptEntity> findByUserId(Long ano);
 }
