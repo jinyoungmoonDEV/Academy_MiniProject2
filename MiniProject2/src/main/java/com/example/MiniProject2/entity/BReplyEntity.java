@@ -15,7 +15,12 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Table(name = "breply_tbl"/*, uniqueConstraints = {@UniqueConstraint(columnNames = "phone_number")}*/)
 public class BReplyEntity {
+
+
     @Id
+    private long rbno;
+
+    @Column(name = "bno", nullable = false)
     public long bno;
 
     @Column(name = "breply", length = 10, nullable = false)
