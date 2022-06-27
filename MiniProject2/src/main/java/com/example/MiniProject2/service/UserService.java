@@ -14,23 +14,23 @@ public class UserService {
     private UserRepository userRepository;
 
     public UserEntity create(final UserEntity userEntity) {
-        if(userEntity == null || userEntity.getPhone_number() == null ) {
+        if(userEntity == null || userEntity.getPhoneNumber() == null ) {
             throw new RuntimeException("Invalid arguments");
         }
-        final String phone_number = userEntity.getPhone_number();
-        if(userRepository.existsByPhoneNumber(phone_number)) {
-            log.warn("Email already exists {}", phone_number);
+        final String PhoneNumber = userEntity.getPhoneNumber();
+        if(userRepository.existsByPhoneNumber(PhoneNumber)) {
+            log.warn("Email already exists {}", PhoneNumber);
             throw new RuntimeException("Email already exists");
         }
 
         return userRepository.save(userEntity);
     }
 
-    public UserEntity getByCredentials(final String phone_number, final String password, final PasswordEncoder encoder) {
-        final UserEntity originalUser = userRepository.findByPhoneNumber(phone_number);
+    public UserEntity getByCredentials(final String PhoneNumber, final String PassWord, final PasswordEncoder encoder) {
+        final UserEntity originalUser = userRepository.findByPhoneNumber(PhoneNumber);
 
         // matches 메서드를 이용해 패스워드가 같은지 확인
-        if(originalUser != null && encoder.matches(password, originalUser.getPassword())) {
+        if(originalUser != null && encoder.matches(PassWord, originalUser.getPassWord())) {
             return originalUser;
         }
         return null;

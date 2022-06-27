@@ -11,31 +11,31 @@ import org.springframework.http.codec.ServerSentEvent;
 @Data
 public class BoardDTO {
 
-	public Long bno;
-	public String r_code;
-	public String user_id;
-	private String title;
-	private String contents;
-	private Long viewers;
-	private Long replycnt;
+	public Long Bno;
+	public String Rcode;
+	public String UserId;
+	private String Title;
+	private String Contents;
+	private Long Viewers;
+	private Long Replycnt;
 
 	public BoardDTO(final BoardEntity entity) {
-		this.bno = entity.getBno();
-		this.r_code = entity.getR_code();
-		this.user_id = entity.getUser_id();
-		this.title = entity.getTitle();
-		this.viewers = entity.getViewers();
-		this.replycnt = entity.getReplycnt();
+		this.Bno = entity.getBno();
+		this.Rcode = entity.getRcode();
+		this.UserId = entity.getUserId();
+		this.Title= entity.getTitle();
+		this.Viewers = entity.getViewers();
+		this.Replycnt = entity.getReplycnt();
 	}
 
 	public static BoardEntity toEntity(final BoardDTO dto) {
 		return BoardEntity.builder()
-				.bno(dto.getBno())
-				.user_id(dto.getUser_id())
-				.r_code(dto.getR_code())
-				.title(dto.getTitle())
-				.viewers(dto.getViewers())
-				.replycnt(dto.getReplycnt())
+				.Bno(dto.getBno())
+				.UserId(dto.getUserId())
+				.Rcode(dto.getRcode())
+				.Title(dto.getTitle())
+				.Viewers(dto.getViewers())
+				.Replycnt(dto.getReplycnt())
 				.build();
 	}
 }

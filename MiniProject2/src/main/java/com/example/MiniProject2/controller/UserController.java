@@ -32,17 +32,17 @@ public class UserController {
         try {
             // 리퀘스트를 이용해 저장할 유저 만들기
             UserEntity user = UserEntity.builder()
-                    .phone_number(userDTO.getPhone_number())
-                    .address(userDTO.getAddress())
-                    .password(passwordEncoder.encode(userDTO.getPassword()))
-                    .user_id(userDTO.getUser_id())
+                    .PhoneNumber(userDTO.getPhoneNumber())
+                    .Address(userDTO.getAddress())
+                    .PassWord(passwordEncoder.encode(userDTO.getPassWord()))
+                    .UserId(userDTO.getUserId())
                     .build();
             // 서비스를 이용해 리파지토리에 유저 저장
             UserEntity registeredUser = userService.create(user);
             UserDTO responseUserDTO = UserDTO.builder()
-                    .phone_number(registeredUser.getPhone_number())
-                    .address(registeredUser.getAddress())
-                    .user_id(registeredUser.getUser_id())
+                    .PhoneNumber(registeredUser.getPhoneNumber())
+                    .Address(registeredUser.getAddress())
+                    .UserId(registeredUser.getUserId())
                     .build();
             // 유저 정보는 항상 하나이므로 그냥 리스트로 만들어야하는 ResponseDTO를 사용하지 않고 그냥 UserDTO 리턴.
             return ResponseEntity.ok(responseUserDTO);
@@ -58,15 +58,15 @@ public class UserController {
     @PostMapping (value = "/signin")
     public ResponseEntity<?> signinUser(@RequestBody UserDTO userDTO) {
         UserEntity user = userService.getByCredentials(
-                userDTO.getPhone_number(),
-                userDTO.getPassword(),
+                userDTO.getPhoneNumber(),
+                userDTO.getPassWord(),
                 passwordEncoder);
 
         if(user != null) {
             // 토큰 생성
             final String token = tokenProvider.create(user);
             final UserDTO responseUserDTO = UserDTO.builder()
-                    .phone_number(user.getPhone_number())
+                    .PhoneNumber(user.getPhoneNumber())
                     .token(token)
                     .build();
             return ResponseEntity.ok().body(responseUserDTO);

@@ -12,8 +12,8 @@ import javax.persistence.UniqueConstraint;
 @AllArgsConstructor
 public class UserDTO {
     private String token;
-    private String phone_number;
-    private String password;
-    private String address;
-    private String user_id;
+    private String PhoneNumber;
+    private String PassWord;
+    private String Address;
+    private String UserId;
 }

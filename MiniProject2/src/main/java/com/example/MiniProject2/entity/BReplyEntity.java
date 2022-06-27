@@ -13,22 +13,23 @@ import java.time.LocalDate;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "breply_tbl"/*, uniqueConstraints = {@UniqueConstraint(columnNames = "phone_number")}*/)
+@Table(name = "BReplyTbl"/*, uniqueConstraints = {@UniqueConstraint(columnNames = "phone_number")}*/)
 public class BReplyEntity {
 
 
     @Id
-    private long rbno;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long RBno;
 
-    @Column(name = "bno", nullable = false)
-    public long bno;
+    @Column(name = "Bno", nullable = false, unique = true)
+    public long Bno;
 
-    @Column(name = "breply", length = 10, nullable = false)
-    private String breply;
+    @Column(name = "BReply", length = 10, nullable = false)
+    private String BReply;
 
-    @Column(name = "user_id", length = 20, nullable = false)
-    public String user_id;
+    @Column(name = "UserId", length = 20, nullable = false)
+    public String UserId;
 
-    @Column(name = "date", length = 8, nullable = false)
-    private LocalDate date;
+    @Column(name = "Date", length = 8, nullable = false)
+    private LocalDate Date;
 }

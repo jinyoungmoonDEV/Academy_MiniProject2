@@ -10,17 +10,17 @@ import java.time.LocalDate;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "areply_tbl"/*, uniqueConstraints = {@UniqueConstraint(columnNames = "phone_number")}*/)
+@Table(name = "AReplyTbl"/*, uniqueConstraints = {@UniqueConstraint(columnNames = "phone_number")}*/)
 public class AReplyEntity {
     @Id
-    public long ano;
+    public long Ano;
 
-    @Column(name = "areply", length = 10000, nullable = false)
-    private String areply;
+    @Column(name = "AReply", length = 10000, nullable = false)
+    private String AReply;
 
-    @Column(name = "user_id", length = 20, nullable = false)
-    public String user_id;
+    @Column(name = "UserId", length = 20, nullable = false)
+    public String UserId;
 
-    @Column(name = "date", length = 8, nullable = false)
-    private LocalDate date;
+    @Column(name = "Date", length = 8, nullable = false)
+    private LocalDate Date;
 }

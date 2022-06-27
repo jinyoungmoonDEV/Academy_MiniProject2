@@ -10,8 +10,8 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Data
 public class AReplyDTO {
-    public long ano;
-    private String areply;
-    public String user_id;
-    private LocalDate date;
+    public long Ano;
+    private String AReply;
+    public String UserId;
+    private LocalDate Date;
 }

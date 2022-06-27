@@ -14,30 +14,30 @@ import java.sql.Blob;
 @NoArgsConstructor
 @AllArgsConstructor
 public class AdoptDTO {
-    public long ano;
-    public String r_code;
-    public String user_id;
-    private String title;
-    private String contents;
-    private Blob image;
+    public long Ano;
+    public String Rcode;
+    public String UserId;
+    private String Title;
+    private String Contents;
+    private Blob Image;
 
     public AdoptDTO(final AdoptEntity entity) {
-        this.ano = entity.getAno();
-        this.r_code = entity.getR_code();
-        this.user_id = entity.getUser_id();
-        this.title = entity.getTitle();
-        this.contents = entity.getContents();
-        this.image = entity.getImage();
+        this.Ano = entity.getAno();
+        this.Rcode = entity.getRcode();
+        this.UserId = entity.getUserId();
+        this.Title = entity.getTitle();
+        this.Contents = entity.getContents();
+        this.Image = entity.getImage();
     }
 
     public static AdoptEntity toEntity(final AdoptDTO dto) {
         return AdoptEntity.builder()
-                .ano(dto.getAno())
-                .user_id(dto.getUser_id())
-                .r_code(dto.getR_code())
-                .title(dto.getTitle())
-                .contents(dto.getContents())
-                .image(dto.getImage())
+                .Ano(dto.getAno())
+                .UserId(dto.getUserId())
+                .Rcode(dto.getRcode())
+                .Title(dto.getTitle())
+                .Contents(dto.getContents())
+                .Image(dto.getImage())
                 .build();
     }
 }

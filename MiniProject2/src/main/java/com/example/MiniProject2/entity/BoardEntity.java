@@ -12,31 +12,31 @@ import java.util.Set;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "board_tbl"/*, uniqueConstraints = {@UniqueConstraint(columnNames = "phone_number")}*/)
+@Table(name = "BoardTbl"/*, uniqueConstraints = {@UniqueConstraint(columnNames = "phone_number")}*/)
 public class BoardEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long bno;
+    private long Bno;
 
-    @Column(name = "r_code", length = 10, nullable = false)
-    public String r_code;
+    @Column(name = "Rcode", length = 10, nullable = false)
+    public String Rcode;
 
-    @Column(name = "user_id", length = 20, nullable = false)
-    public String user_id;
+    @Column(name = "UserId", length = 20, nullable = false)
+    public String UserId;
 
-    @Column(name = "title", length = 30, nullable = false)
-    private String title;
+    @Column(name = "Title", length = 30, nullable = false)
+    private String Title;
 
-    @Column(name = "contents",length = 10000, nullable = false)
-    private String contents;
+    @Column(name = "Contents",length = 10000, nullable = false)
+    private String Contents;
 
-    @Column(name = "viewers", length = 10)
-    private long viewers;
+    @Column(name = "Viewers", length = 10)
+    private long Viewers;
 
-    @Column(name = "replycnt", length = 10)
-    private long replycnt;
+    @Column(name = "Replycnt", length = 10)
+    private long Replycnt;
 
     @OneToMany
-    @JoinColumn(name = "bno")
+    @JoinColumn(name = "Bno")
     private Set<BReplyEntity> bnoReplyEntitySet;
 }

@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface BoardRepository extends JpaRepository<BoardEntity, Long>{
-	List<BoardEntity> findByUserId(Long bno);
+	List<BoardEntity> findByUserId(Long Bno);
 }

@@ -14,28 +14,28 @@ import java.util.Set;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "adopt_tbl"/*, uniqueConstraints = {@UniqueConstraint(columnNames = "phone_number")}*/)
+@Table(name = "AdoptTbl"/*, uniqueConstraints = {@UniqueConstraint(columnNames = "phone_number")}*/)
 public class AdoptEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public long ano;
+    public long Ano;
 
-    @Column(name = "r_code", length = 10, nullable = false)
-    public String r_code;
+    @Column(name = "Rcode", length = 10, nullable = false)
+    public String Rcode;
 
-    @Column(name = "user_id", length = 20, nullable = false)
-    public String user_id;
+    @Column(name = "UserId", length = 20, nullable = false)
+    public String UserId;
 
-    @Column(name = "title", length = 30, nullable = false)
-    private String title;
+    @Column(name = "Title", length = 30, nullable = false)
+    private String Title;
 
-    @Column(name = "contents",length = 10000, nullable = false)
-    private String contents;
+    @Column(name = "Contents",length = 10000, nullable = false)
+    private String Contents;
 
-    @Column(name = "image",length = 10000)
-    private Blob image;
+    @Column(name = "Image",length = 10000)
+    private Blob Image;
 
     @OneToMany
-    @JoinColumn(name = "ano")
+    @JoinColumn(name = "Ano")
     private Set<AReplyEntity> anoReplyEntitySet;
 }

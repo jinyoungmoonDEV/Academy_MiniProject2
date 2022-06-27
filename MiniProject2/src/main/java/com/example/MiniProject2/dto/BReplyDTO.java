@@ -10,8 +10,8 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Data
 public class BReplyDTO {
-    public long bno;
-    private String breply;
-    public String user_id;
-    private LocalDate date;
+    public long Bno;
+    private String BReply;
+    public String UserId;
+    private LocalDate Date;
 }

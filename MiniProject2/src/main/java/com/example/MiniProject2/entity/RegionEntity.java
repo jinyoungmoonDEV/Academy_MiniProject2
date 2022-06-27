@@ -11,24 +11,24 @@ import java.util.Set;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "region_tbl"/*, uniqueConstraints = {@UniqueConstraint(columnNames = "phone_number")}*/)
+@Table(name = "RegionTbl"/*, uniqueConstraints = {@UniqueConstraint(columnNames = "phone_number")}*/)
 public class RegionEntity {
     @Id
-    @Column(name = "r_code", length = 10, nullable = false)
-    public String r_code;
+    @Column(name = "Rcode", length = 10, nullable = false)
+    public String Rcode;
 
-    @Column(name = "address", length = 50, nullable = false)
-    public String address;
+    @Column(name = "Address", length = 50, nullable = false)
+    public String Address;
 
     @OneToMany
-    @JoinColumn(name = "r_code")
+    @JoinColumn(name = "Rcode")
     private Set<AdoptEntity> adoptEntitySet;
 
     @OneToMany
-    @JoinColumn(name = "r_code")
+    @JoinColumn(name = "Rcode")
     private Set<BoardEntity> boardEntitySet;
 
     @OneToMany
-    @JoinColumn(name = "address")
+    @JoinColumn(name = "Address")
     private List<UserEntity> userEntityList;
 }
