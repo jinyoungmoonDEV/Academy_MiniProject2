@@ -1,10 +1,9 @@
 package com.example.MiniProject2.dto;
 
-import com.example.MiniProject2.entity.BoardEntity;
+import com.example.MiniProject2.entity.Board;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.http.codec.ServerSentEvent;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -19,7 +18,7 @@ public class BoardDTO {
 	private Long Viewers;
 	private Long Replycnt;
 
-	public BoardDTO(final BoardEntity entity) {
+	public BoardDTO(final Board entity) {
 		this.Bno = entity.getBno();
 		this.Rcode = entity.getRcode();
 		this.UserId = entity.getUserId();
@@ -28,8 +27,8 @@ public class BoardDTO {
 		this.Replycnt = entity.getReplycnt();
 	}
 
-	public static BoardEntity toEntity(final BoardDTO dto) {
-		return BoardEntity.builder()
+	public static Board toEntity(final BoardDTO dto) {
+		return Board.builder()
 				.Bno(dto.getBno())
 				.UserId(dto.getUserId())
 				.Rcode(dto.getRcode())

@@ -2,14 +2,14 @@ package com.example.MiniProject2.controller;
 
 import com.example.MiniProject2.dto.ResponseDTO;
 import com.example.MiniProject2.dto.UserDTO;
-import com.example.MiniProject2.entity.UserEntity;
+import com.example.MiniProject2.entity.User;
 import com.example.MiniProject2.security.TokenProvider;
 import com.example.MiniProject2.service.UserService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,11 +18,12 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RestController
 @RequestMapping("/auth")
+@Component
 public class UserController {
-    @Autowired
+    //@Autowired
     private UserService userService;
 
-    @Autowired
+    //@Autowired
     private TokenProvider tokenProvider;
 
     private PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
@@ -31,14 +32,14 @@ public class UserController {
     public ResponseEntity<?> registerUser(@RequestBody UserDTO userDTO){
         try {
             // 리퀘스트를 이용해 저장할 유저 만들기
-            UserEntity user = UserEntity.builder()
+            User user = User.builder()
                     .PhoneNumber(userDTO.getPhoneNumber())
                     .Address(userDTO.getAddress())
                     .PassWord(passwordEncoder.encode(userDTO.getPassWord()))
                     .UserId(userDTO.getUserId())
                     .build();
             // 서비스를 이용해 리파지토리에 유저 저장
-            UserEntity registeredUser = userService.create(user);
+            User registeredUser = userService.create(user);
             UserDTO responseUserDTO = UserDTO.builder()
                     .PhoneNumber(registeredUser.getPhoneNumber())
                     .Address(registeredUser.getAddress())
@@ -57,7 +58,7 @@ public class UserController {
 
     @PostMapping (value = "/signin")
     public ResponseEntity<?> signinUser(@RequestBody UserDTO userDTO) {
-        UserEntity user = userService.getByCredentials(
+        User user = userService.getByCredentials(
                 userDTO.getPhoneNumber(),
                 userDTO.getPassWord(),
                 passwordEncoder);

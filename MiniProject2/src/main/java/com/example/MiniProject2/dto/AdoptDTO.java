@@ -1,12 +1,8 @@
 package com.example.MiniProject2.dto;
 
-import com.example.MiniProject2.entity.AdoptEntity;
-import com.example.MiniProject2.entity.BoardEntity;
+import com.example.MiniProject2.entity.Adopt;
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
 import java.sql.Blob;
 
 @Data
@@ -21,7 +17,7 @@ public class AdoptDTO {
     private String Contents;
     private Blob Image;
 
-    public AdoptDTO(final AdoptEntity entity) {
+    public AdoptDTO(final Adopt entity) {
         this.Ano = entity.getAno();
         this.Rcode = entity.getRcode();
         this.UserId = entity.getUserId();
@@ -30,8 +26,8 @@ public class AdoptDTO {
         this.Image = entity.getImage();
     }
 
-    public static AdoptEntity toEntity(final AdoptDTO dto) {
-        return AdoptEntity.builder()
+    public static Adopt toEntity(final AdoptDTO dto) {
+        return Adopt.builder()
                 .Ano(dto.getAno())
                 .UserId(dto.getUserId())
                 .Rcode(dto.getRcode())

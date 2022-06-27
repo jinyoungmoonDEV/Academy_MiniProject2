@@ -1,6 +1,6 @@
 package com.example.MiniProject2.security;
 
-import com.example.MiniProject2.entity.UserEntity;
+import com.example.MiniProject2.entity.User;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -16,7 +16,7 @@ import java.util.Date;
 public class TokenProvider {
 	private static final String SECRET_KEY = "NMA8JPctFuna59f5";
 
-	public String create(UserEntity userEntity) {
+	public String create(User user) {
 		// 기한 지금으로부터 1일로 설정
 		Date expiryDate = Date.from(
 						Instant.now()
@@ -40,7 +40,7 @@ public class TokenProvider {
 						// header에 들어갈 내용 및 서명을 하기 위한 SECRET_KEY
 						.signWith(SignatureAlgorithm.HS512, SECRET_KEY)
 						// payload에 들어갈 내용
-						.setSubject(userEntity.getPhoneNumber()) // sub : subject
+						.setSubject(user.getPhoneNumber()) // sub : subject
 						.setIssuer("demo app") // iss  : Issuer
 						.setIssuedAt(new Date()) // iat : issue at
 						.setExpiration(expiryDate) // exp : expiration
