@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
 @RestController
-@RequestMapping("/templates")
+@RequestMapping("/auth")
 public class UserController {
     @Autowired
     private UserService userService;
@@ -27,7 +27,7 @@ public class UserController {
 
     private PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
-    @RequestMapping(value = "/create",method = RequestMethod.POST)
+    @PostMapping(value = "/signup")
     public ResponseEntity<?> registerUser(@RequestBody UserDTO userDTO){
         try {
             // 리퀘스트를 이용해 저장할 유저 만들기
@@ -55,7 +55,7 @@ public class UserController {
         }
     }
 
-    @GetMapping (value = "/userin")
+    @PostMapping (value = "/signin")
     public ResponseEntity<?> signinUser(@RequestBody UserDTO userDTO) {
         UserEntity user = userService.getByCredentials(
                 userDTO.getPhone_number(),
@@ -67,7 +67,6 @@ public class UserController {
             final String token = tokenProvider.create(user);
             final UserDTO responseUserDTO = UserDTO.builder()
                     .phone_number(user.getPhone_number())
-                    .user_id(user.getUser_id())
                     .token(token)
                     .build();
             return ResponseEntity.ok().body(responseUserDTO);
