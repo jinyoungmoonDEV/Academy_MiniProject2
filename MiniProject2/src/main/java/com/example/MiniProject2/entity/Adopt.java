@@ -35,6 +35,12 @@ public class Adopt {
     @Column(name = "Image",length = 10000)
     private Blob Image;
 
+    @Column(name = "Viewers", length = 10)
+    private long Viewers;
+
+    @Column(name = "Replycnt")
+    private long Replycnt;
+
     @OneToMany
     @JoinColumn(name = "Ano")
     private Set<AReply> aReplySet;

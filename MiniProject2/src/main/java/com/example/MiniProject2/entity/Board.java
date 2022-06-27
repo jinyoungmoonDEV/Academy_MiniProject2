@@ -32,6 +32,9 @@ public class Board {
     @Column(name = "Viewers", length = 10)
     private long Viewers;
 
+    @Column(name = "Replycnt")
+    private long Replycnt;
+
     @OneToMany
     @JoinColumn(name = "Bno")
     private Set<BReply> bnoReplyEntitySet;
