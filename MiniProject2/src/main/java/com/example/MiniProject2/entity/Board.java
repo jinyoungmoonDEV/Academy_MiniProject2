@@ -17,11 +17,11 @@ public class Board {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long Bno;
 
-    @Column(name = "Rcode", length = 10, nullable = false)
-    public String Rcode;
+    @Column(name = "RegionID", length = 10, nullable = false)
+    public String RegionID;
 
-    @Column(name = "UserId", length = 20, nullable = false)
-    public String UserId;
+    @Column(name = "UserID", length = 20, nullable = false)
+    public String UserID;
 
     @Column(name = "Title", length = 30, nullable = false)
     private String Title;
@@ -31,9 +31,6 @@ public class Board {
 
     @Column(name = "Viewers", length = 10)
     private long Viewers;
-
-    @Column(name = "Replycnt", length = 10)
-    private long Replycnt;
 
     @OneToMany
     @JoinColumn(name = "Bno")

@@ -20,11 +20,11 @@ public class Adopt {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public long Ano;
 
-    @Column(name = "Rcode", length = 10, nullable = false)
-    public String Rcode;
+    @Column(name = "RegionID", length = 10, nullable = false)
+    public String RegionID;
 
-    @Column(name = "UserId", length = 20, nullable = false)
-    public String UserId;
+    @Column(name = "UserID", length = 20, nullable = false)
+    public String UserID;
 
     @Column(name = "Title", length = 30, nullable = false)
     private String Title;
@@ -37,5 +37,5 @@ public class Adopt {
 
     @OneToMany
     @JoinColumn(name = "Ano")
-    private Set<AReply> anoReplyEntitySet;
+    private Set<AReply> aReplySet;
 }

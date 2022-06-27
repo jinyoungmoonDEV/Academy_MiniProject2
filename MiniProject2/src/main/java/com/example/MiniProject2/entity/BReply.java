@@ -16,7 +16,6 @@ import java.time.LocalDate;
 @Table(name = "BReplyTbl"/*, uniqueConstraints = {@UniqueConstraint(columnNames = "phone_number")}*/)
 public class BReply {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long RBno;
@@ -27,9 +26,7 @@ public class BReply {
     @Column(name = "BReply", length = 10, nullable = false)
     private String BReply;
 
-    @Column(name = "UserId", length = 20, nullable = false)
-    public String UserId;
+    @Column(name = "UserID", length = 20, nullable = false)
+    public String UserID;
 
-    @Column(name = "Date", length = 8, nullable = false)
-    private LocalDate Date;
 }

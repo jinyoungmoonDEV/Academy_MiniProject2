@@ -12,15 +12,18 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Table(name = "AReplyTbl"/*, uniqueConstraints = {@UniqueConstraint(columnNames = "phone_number")}*/)
 public class AReply {
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long RAno;
+
+    @Column(name = "Ano", nullable = false, unique = true)
     public long Ano;
 
     @Column(name = "AReply", length = 10000, nullable = false)
     private String AReply;
 
-    @Column(name = "UserId", length = 20, nullable = false)
-    public String UserId;
+    @Column(name = "UserID", length = 20, nullable = false)
+    public String UserID;
 
-    @Column(name = "Date", length = 8, nullable = false)
-    private LocalDate Date;
 }
